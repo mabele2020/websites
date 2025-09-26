@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Turkuaz Beach Hotel Zanzibar</title>
+  <link rel="stylesheet" href="bootstrap-5.3.7/dist/css/bootstrap.min.css" />
+  <style>
+    .hero {
+      background: url('caption.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    .facility-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .facility-img:hover {
+      transform: scale(1.05);
+    }
+    h2, h3 {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4">
+    <a class="navbar-brand fw-bold" href="index.html">Turkuaz Beach Hotel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button class="btn btn-outline-light" onclick="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero text-center">
+    <div>
+      <h1 class="display-4 fw-bold">Welcome to Turkuaz Beach Hotel</h1>
+      <p class="lead fs-4">Where Luxury Meets the White Sands of Zanzibar</p>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <!-- Introduction -->
+    <section class="text-center mb-5">
+      <h2 class="text-primary mb-3">About Us</h2>
+      <p class="text-muted col-md-8 mx-auto">
+        Nestled on the pristine shores of Zanzibar, Turkuaz Beach Hotel offers a perfect blend of luxury and Swahili charm.
+        Enjoy turquoise waters, soft white sand, and an unparalleled hospitality experience at one of the most serene beaches in the world.
+      </p>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="row text-center mb-5">
+      <div class="col-md-6">
+        <h4 class="text-success">Our Mission</h4>
+        <p class="text-muted">To provide an unforgettable beachfront experience blending relaxation, cultural richness, and modern comfort.</p>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-warning">Our Vision</h4>
+        <p class="text-muted">To become Zanzibar’s top beachfront destination, celebrated for authentic Swahili hospitality and ocean views.</p>
+      </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="mb-5">
+      <h3 class="text-center mb-4">Facilities & Amenities</h3>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <img src="poolimage.jpg" class="facility-img" alt="Swimming Pool">
+          <h6 class="mt-2">Infinity Swimming Pool</h6>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="beachfront.jpg" class="facility-img" alt="Beachfront Dining">
+          <h6 class="mt-2">Beachfront Dining</h6>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="again.webp" class="facility-img" alt="Spa & Wellness">
+          <h6 class="mt-2">Spa & Wellness Center</h6>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="mb-5 text-center">
+      <h3 class="mb-3">Our Location</h3>
+      <p class="text-muted">Turkuaz Beach Hotel, Kiwengwa Beach, Zanzibar, Tanzania</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6551451651584!2d39.3636!3d-5.9748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd56a123456%3ATurkuazBeachHotel!5e0!3m2!1sen!2stz!4v1681234567890"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Turkuaz Beach Hotel | Zanzibar</p>
+    <small>Email: info@turkuazbeachzanzibar.com | Phone: +255 123 456 789</small>
+  </footer>
+
+  <script src="bootstrap-5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function logout() {
+      // Example logout logic:
+      // Clear local storage/session storage or cookies here as needed
+      alert('You have been logged out.');
+      window.location.href = 'index.html';  // Redirect to home/login page
+    }
+  </script>
+</body>
+</html>

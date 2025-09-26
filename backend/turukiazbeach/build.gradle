@@ -1,0 +1,58 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+
+	// Local JARs (e.g., iText 2.1.7)
+	flatDir {
+		dirs 'libs'
+	}
+}
+
+dependencies {
+	// 🌐 Spring Boot Starters
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// 🧾 PDF generation (OpenPDF 1.3.30 for Java 17 compatibility)
+	implementation 'com.github.librepdf:openpdf:1.3.30'
+
+	// 🐬 MySQL Connector
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// 🧠 Lombok (compile-time only)
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+	// 🔁 Dev Tools (hot reload)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// 🧪 Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food & Dining | Turkuaz Beach Hotel</title>
+  <link rel="stylesheet" href="bootstrap-5.3.7/dist/css/bootstrap.min.css" />
+  <style>
+    .hero {
+      background: url('zanz.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    .menu-img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .gallery img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark px-3">
+    <a class="navbar-brand text-white" href="Home.html">Turkuaz Beach Hotel</a>
+    <div class="ms-auto">
+      <a href="Home.html" class="btn btn-warning">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero text-center">
+    <div>
+      <h1 class="display-4">Savor the Taste of Zanzibar</h1>
+      <p class="lead">Fresh seafood, tropical flavors & beachfront dining</p>
+      <a href="#reservation" class="btn btn-light btn-lg mt-3">Book a Table</a>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <!-- Restaurant Overview -->
+    <section class="mb-5 text-center">
+      <h2 class="text-primary mb-3">Our Dining Experience</h2>
+      <p class="text-muted">
+        At Turkuaz Beach Hotel, indulge in local Zanzibari cuisine, fresh seafood, and international dishes
+        served by the ocean. Enjoy tropical cocktails and beachside dining under the stars.
+      </p>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section class="mb-5">
+      <h3 class="mb-4 text-center text-success">Menu Highlights</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4 text-center">
+          <img src="seafood.jpg" class="menu-img w-100" alt="Seafood Platter" />
+          <h5 class="mt-2">Seafood Platter</h5>
+          <p class="text-muted">Freshly grilled prawns, lobster & fish served with tropical sides.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <img src="swahilbreastfirst.jpg" class="menu-img w-100" alt="Swahili Breakfast" />
+          <h5 class="mt-2">Swahili Breakfast</h5>
+          <p class="text-muted">Mandazi, fresh fruit, coconut pancakes & spiced tea.</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <img src="tropical food.jpg" class="menu-img w-100" alt="Tropical Cocktails" />
+          <h5 class="mt-2">Tropical Cocktails</h5>
+          <p class="text-muted">Refreshing drinks by the beach with exotic Zanzibari flavors.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Special Dining Experiences -->
+    <section class="mb-5 text-center">
+      <h3 class="text-danger mb-3">Special Dining Experiences</h3>
+      <p>
+        Join us for <strong>candlelight beach dinners</strong>, live music BBQ nights, or private dining
+        under the stars.
+      </p>
+    </section>
+
+    <!-- Reservation Form -->
+    <section id="reservation" class="mb-5">
+      <h3 class="text-center text-primary mb-4">Book a Table</h3>
+      <form class="col-md-6 mx-auto border p-4 rounded shadow" id="reservationForm">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Number of Guests</label>
+          <input type="number" class="form-control" id="guests" required min="1" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Select Food Type</label>
+          <select class="form-select" id="foodType" required>
+            <option value="">-- Choose a Food Type --</option>
+            <option value="Seafood Platter">Seafood Platter</option>
+            <option value="Swahili Breakfast">Swahili Breakfast</option>
+            <option value="Tropical Cocktails">Tropical Cocktails</option>
+            <option value="Romantic Dinner">Romantic Candlelight Dinner</option>
+            <option value="BBQ Night">BBQ Night</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Date & Time</label>
+          <input type="datetime-local" class="form-control" id="datetime" required />
+        </div>
+        <button type="submit" class="btn btn-success w-100">Reserve Now</button>
+      </form>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery mb-5">
+      <h3 class="text-center text-secondary mb-4">Gallery</h3>
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3"><img src="fisrt.jpg" class="w-100" alt="Dining 1" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="second.jpg" class="w-100" alt="Dining 2" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="third.jpeg" class="w-100" alt="Dining 3" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="four.webp" class="w-100" alt="Dining 4" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="Beaches.jpg" class="w-100" alt="Dining 5" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="bar.png" class="w-100" alt="Dining 6" /></div>
+        <div class="col-6 col-md-3 mb-3"><img src="recre.jpg" class="w-100" alt="Dining 7" /></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="bg-primary text-white text-center py-3">
+    <p>&copy; 2025 Turkuaz Beach Hotel | Zanzibar</p>
+  </footer>
+
+  <script src="bootstrap-5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("reservationForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const dtValue = document.getElementById("datetime").value; // e.g. "2025-08-04T18:30"
+      if (!dtValue) {
+        alert("Please select date and time.");
+        return;
+      }
+      const timeOnly = dtValue.split('T')[1] + ":00"; // "HH:mm:ss"
+
+      const reservation = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        guest: parseInt(document.getElementById("guests").value, 10),
+        foodtype: document.getElementById("foodType").value,
+        date: timeOnly
+      };
+
+      try {
+        const res = await fetch("http://localhost:8080/api/food", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(reservation)
+        });
+
+        if (res.ok) {
+          alert("Reservation successful! We look forward to serving you.");
+          document.getElementById("reservationForm").reset();
+        } else {
+          alert("Failed to reserve. Please try again.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Server error. Check backend connection.");
+      }
+    });
+  </script>
+</body>
+</html>

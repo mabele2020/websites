@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Turukiaz Beach Hotel Zanzibar</title>
+  <link rel="stylesheet" href="bootstrap-5.3.7/dist/css/bootstrap.min.css" />
+  <style>
+    /* Hero styling */
+    .hero {
+      background: url('beachfront.jpg') center/cover no-repeat;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .facility-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .facility-img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-4">
+    <a class="navbar-brand fw-bold" href="#">Turukiaz Beach Hotel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="food.html" class="nav-link">Dining</a></li>
+        <li class="nav-item"><button class="btn btn-outline-light ms-3" onclick="logout()">Logout</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero text-center">
+    <div>
+      <h1 class="display-3 fw-bold">Welcome to Turukiaz Beach Hotel</h1>
+      <p class="lead fs-4">Experience Luxury & Serenity on Zanzibar's White Sands</p>
+      <a href="food.html" class="btn btn-warning btn-lg mt-3">Explore Dining</a>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <!-- Facilities -->
+    <section class="mb-5">
+      <h2 class="text-primary text-center mb-4">Our Facilities & Amenities</h2>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <img src="poolimage.jpg" alt="Swimming Pool" class="facility-img" />
+          <h5 class="mt-2">Infinity Swimming Pool</h5>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="beachfront.jpg" alt="Beachfront Dining" class="facility-img" />
+          <h5 class="mt-2">Beachfront Dining</h5>
+        </div>
+        <div class="col-md-4 mb-4">
+          <img src="four.webp" alt="Spa & Wellness" class="facility-img" />
+          <h5 class="mt-2">Spa & Wellness Center</h5>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="mb-5 text-center">
+      <h2 class="text-primary mb-3">About Turukiaz</h2>
+      <p class="text-muted col-md-8 mx-auto">
+        Nestled on the pristine shores of Zanzibar, Turukiaz Beach Hotel offers a perfect blend of luxury and Swahili charm. Enjoy turquoise waters, soft white sand, and an unparalleled hospitality experience.
+      </p>
+      <a href="about.html" class="btn btn-primary mt-3">Learn More</a>
+    </section>
+
+    <!-- Embedded Contact Section -->
+    <section class="mb-5 text-center">
+      <h2 class="text-primary mb-3">Get in Touch</h2>
+      <p class="text-muted col-md-8 mx-auto">
+        Have questions or want to book your stay? Reach out to us anytime.
+      </p>
+      <p class="mt-3 fw-bold">
+        📧 Email: <a href="mailto:info@turukiazbeachzanzibar.com">info@turukiazbeachzanzibar.com</a><br />
+        📞 Phone: <a href="tel:+255123456789">+255 123 456 789</a>
+      </p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Turukiaz Beach Hotel | Zanzibar</p>
+    <small>Email: info@turukiazbeachzanzibar.com | Phone: +255 123 456 789</small>
+  </footer>
+
+  <script src="bootstrap-5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function logout() {
+      alert("You have been logged out.");
+      window.location.href = "index.html"; // Redirect to homepage or login
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Booking</title>
+  <link rel="stylesheet" href="bootstrap-5.3.7/dist/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container py-4">
+    <h2 class="text-primary mb-4">✏️ Edit My Booking</h2>
+
+    <form id="editForm" class="row g-3">
+      <div class="col-md-6">
+        <label for="roomType" class="form-label">Room Type</label>
+        <select id="roomType" class="form-select" required>
+          <option value="Standard Room – $80/night">Standard Room – $80/night</option>
+          <option value="Deluxe Room – $120/night">Deluxe Room – $120/night</option>
+          <option value="Ocean View Room – $150/night">Ocean View Room – $150/night</option>
+          <option value="Honeymoon Suite – $200/night">Honeymoon Suite – $200/night</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="guests" class="form-label">Guests</label>
+        <input type="number" id="guests" class="form-control" min="1" max="10" required />
+      </div>
+
+      <div class="col-md-6">
+        <label for="checkinDate" class="form-label">Check-in Date</label>
+        <input type="date" id="checkinDate" class="form-control" required />
+      </div>
+
+      <div class="col-md-6">
+        <label for="checkoutDate" class="form-label">Check-out Date</label>
+        <input type="date" id="checkoutDate" class="form-control" required />
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-success px-5">Save Changes</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="bootstrap-5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bookingData = localStorage.getItem("editBooking");
+      const userData = localStorage.getItem("user");
+
+      if (!bookingData || !userData) {
+        alert("Missing booking or user data.");
+        window.location.href = "view-bookings.html";
+        return;
+      }
+
+      let booking, user;
+      try {
+        booking = JSON.parse(bookingData);
+        user = JSON.parse(userData);
+      } catch (err) {
+        alert("Invalid data format.");
+        window.location.href = "view-bookings.html";
+        return;
+      }
+
+      const userEmail = user.email;
+
+      // ✅ Populate form
+      document.getElementById("roomType").value = booking.roomType || "";
+      document.getElementById("guests").value = booking.guests || 1;
+      document.getElementById("checkinDate").value = booking.checkinDate || "";
+      document.getElementById("checkoutDate").value = booking.checkoutDate || "";
+
+      // ✅ Handle form submission
+      document.getElementById("editForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const updatedBooking = {
+          id: booking.id,
+          roomType: document.getElementById("roomType").value,
+          guests: parseInt(document.getElementById("guests").value),
+          checkinDate: document.getElementById("checkinDate").value,
+          checkoutDate: document.getElementById("checkoutDate").value,
+          email: userEmail
+        };
+
+        try {
+          const res = await fetch(`http://localhost:8080/api/bookings/${booking.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              "X-User-Email": userEmail
+            },
+            body: JSON.stringify(updatedBooking)
+          });
+
+          const result = await res.text();
+          console.log("PUT response:", result);
+
+          if (res.ok) {
+            alert("Booking updated successfully!");
+            localStorage.removeItem("editBooking");
+            window.location.href = "view-bookings.html";
+          } else {
+            alert("Update failed: " + result);
+          }
+        } catch (err) {
+          console.error("Update error:", err);
+          alert("Server error.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
